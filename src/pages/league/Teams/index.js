@@ -39,29 +39,31 @@ const Teams = () => {
                 {
                     loading
                         ?
-                        <Loader />
+                            <Loader />
                         :
                         <>
                             <Search setSearch={setSearch} />
-                            <div className={style.list}>
+                            <ul className={style.list}>
                                 {
                                     searchItems(data.teams).map((el, idx) =>
-                                        <NavLink
-                                            key={idx}
-                                            className={style.item}
-                                            to={`/${url.id}/${url.category}/${url.league}/team/${el._id}`}
-                                        >
-                                            {
-                                                el.cc &&
-                                                <span className={style.country}>
-                                                    <img src={`https://img.sportradar.com/ls/crest/big/${el.cc.a2}.png`} alt={el.name} />
-                                                </span>
-                                            }
-                                            {el.name}
-                                        </NavLink>
+                                        <li key={idx}>
+                                            <NavLink
+
+                                                className={style.item}
+                                                to={`/${url.id}/${url.category}/${url.league}/team/${el._id}`}
+                                            >
+                                                {
+                                                    el.cc &&
+                                                    <span className={style.country}>
+                                                        <img src={`https://img.sportradar.com/ls/crest/big/${el.cc.a2}.png`} alt={el.name} />
+                                                    </span>
+                                                }
+                                                {el.name}
+                                            </NavLink>
+                                        </li>
                                     )
                                 }
-                            </div>
+                            </ul>
                         </>
                 }
             </div>

@@ -2,7 +2,7 @@
 
 .block {
   position: relative;
-  min-height: 200px;
+  min-height: rem(200px);
 }
 
 .head {
@@ -26,9 +26,9 @@
   @include make-spacer('mb', 2);
 
   display: grid;
-  grid-template-columns: 15px 1fr;
+  grid-template-columns: rem(15px) 1fr;
   align-items: center;
-  grid-gap: 10px;
+  grid-gap: rem(10px);
 
   &:last-child {
     @include make-spacer('mb', 0);
@@ -36,5 +36,5 @@
 }
 
 .marker {
-  @include size(15px);
+  @include size(rem(15px));
 }

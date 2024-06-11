@@ -39,25 +39,26 @@ const Archive = () => {
                 {
                     loading
                         ?
-                        <Loader />
+                            <Loader />
                         :
-                        <>
-                            <Search setSearch={setSearch} />
-                                <div className={style.list}>
-                                {
-                                    searchItems(data.doc[0].data.seasons).map((el, idx) =>
-                                        <NavLink
-                                            key={idx}
-                                            className={style.item}
-                                            to={`/${url.id}/${url.category}/${el._id}/overview`}
-                                            aria-label={data.name}
-                                        >
-                                            {el.name}
-                                        </NavLink>
-                                    )
-                                }
-                            </div>
-                        </>
+                            <>
+                                <Search setSearch={setSearch} />
+                                    <ul className={style.list}>
+                                    {
+                                        searchItems(data.doc[0].data.seasons).map((el, idx) =>
+                                            <li key={idx}>
+                                                <NavLink
+                                                    className={style.item}
+                                                    to={`/${url.id}/${url.category}/${el._id}/overview`}
+                                                    aria-label={data.name}
+                                                >
+                                                    {el.name}
+                                                </NavLink>
+                                            </li>
+                                        )
+                                    }
+                                </ul>
+                            </>
                 }
             </div>
         </Container>

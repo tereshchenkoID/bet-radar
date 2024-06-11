@@ -14,7 +14,7 @@
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
   cursor: pointer;
-  height: 45px;
+  height: var(--base-height-md);
 
   &::before {
     @include size(0, 100%);
@@ -32,7 +32,7 @@
     color: var(--text-for-material);
 
     &::before {
-      width: 4px;
+      width: rem(4px);
     }
   }
 

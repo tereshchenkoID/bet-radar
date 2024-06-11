@@ -14,7 +14,7 @@
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
   cursor: pointer;
-  height: 45px;
+  height: var(--base-height-md);
 
   &::before {
     @include size(0, 100%);
@@ -32,7 +32,7 @@
     color: var(--text-for-material);
 
     &::before {
-      width: 4px;
+      width: rem(4px);
     }
   }
 
@@ -47,12 +47,9 @@
 
 .country {
   @include make-spacer('mr', 2);
-  @include size(29px, 16px);
+  @include size(rem(29px), rem(16px));
 
   img {
-    @include size(100%);
-
-    display: block;
     object-fit: cover;
   }
 }

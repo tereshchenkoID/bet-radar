@@ -25,10 +25,10 @@
 
 .row {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) 150px repeat(5, 80px);
+  grid-template-columns: minmax(rem(300px), 1fr) rem(150px) repeat(5, rem(80px));
   align-items: center;
   border-bottom: 1px solid var(--border);
-  height: 45px;
+  height: var(--base-height-md);
 
   &:nth-child(odd) {
     background-color: var(--primary);
@@ -66,24 +66,21 @@
 }
 
 .country {
-  @include size(24px, 16px);
+  @include size(rem(24px), rem(16px));
   @include make-spacer('mr', 2);
 
   flex-shrink: 0;
 
   img {
-    @include size(100%);
-
-    display: block;
     object-fit: cover;
   }
 }
 
 .meta {
   display: grid;
-  grid-template-columns: 50px 50px 24px 1fr;
+  grid-template-columns: rem(50px) rem(50px) rem(24px) 1fr;
   align-items: center;
-  grid-gap: 10px;
+  grid-gap: rem(10px);
   text-align: left;
 
   div {
